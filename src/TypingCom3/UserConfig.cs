@@ -1,0 +1,28 @@
+﻿namespace TypingCom3
+{
+    class UserConfig
+    {
+        public static dynamic Get(string key)
+        {
+            return Properties.Settings.Default[key];
+        }
+
+        public static void Set(string key, dynamic value)
+        {
+            Properties.Settings.Default[key] = value;
+        }
+
+        public static void Save()
+        {
+            Logger.Log("Saving User Configuration");
+
+            Properties.Settings.Default["UsrCnf_Accuracy"] = Config.Accuracy;
+            Properties.Settings.Default["UsrCnf_AccuracyV"] = Config.AccuracyVariancy;
+
+            Properties.Settings.Default["UsrCnf_TypingRate_Real"] = Config.TypingRate;
+            Properties.Settings.Default["UsrCnf_TypingRateV"] = Config.TypingRateVariancy;
+
+            Properties.Settings.Default.Save();
+        }
+    }
+}
