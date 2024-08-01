@@ -33,14 +33,15 @@ namespace TypingCom3
         {
             webView = new Microsoft.Web.WebView2.WinForms.WebView2();
             controls = new Panel();
-            accuracySlider = new TrackBar();
+            discord = new Button();
             accuracySlider_L = new Label();
-            accuracySlider_V = new TrackBar();
             accuracySlider_V_L = new Label();
-            typingRateSlider = new TrackBar();
             typingRateSlider_L = new Label();
-            typingRateSlider_V = new TrackBar();
             typingRateSlider_V_L = new Label();
+            accuracySlider = new TrackBar();
+            accuracySlider_V = new TrackBar();
+            typingRateSlider = new TrackBar();
+            typingRateSlider_V = new TrackBar();
             startButton = new Button();
             ((System.ComponentModel.ISupportInitialize)webView).BeginInit();
             controls.SuspendLayout();
@@ -68,6 +69,7 @@ namespace TypingCom3
             // controls
             // 
             controls.BackColor = Color.FromArgb(46, 49, 65);
+            controls.Controls.Add(discord);
             controls.Controls.Add(accuracySlider_L);
             controls.Controls.Add(accuracySlider_V_L);
             controls.Controls.Add(typingRateSlider_L);
@@ -83,6 +85,70 @@ namespace TypingCom3
             controls.Size = new Size(200, 800);
             controls.TabIndex = 1;
             // 
+            // discord
+            // 
+            discord.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            discord.BackColor = Color.FromArgb(24, 85, 133);
+            discord.Cursor = Cursors.Hand;
+            discord.FlatAppearance.BorderColor = Color.FromArgb(24, 85, 133);
+            discord.FlatAppearance.MouseDownBackColor = Color.FromArgb(24, 85, 133);
+            discord.FlatAppearance.MouseOverBackColor = Color.FromArgb(24, 85, 133);
+            discord.FlatStyle = FlatStyle.Flat;
+            discord.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            discord.ForeColor = Color.White;
+            discord.Location = new Point(5, 765);
+            discord.Margin = new Padding(5);
+            discord.Name = "discord";
+            discord.Size = new Size(190, 30);
+            discord.TabIndex = 0;
+            discord.Text = "Join Discord";
+            discord.UseVisualStyleBackColor = false;
+            discord.Click += UI_Click_Discord;
+            // 
+            // accuracySlider_L
+            // 
+            accuracySlider_L.Font = new Font("Segoe UI", 10F);
+            accuracySlider_L.ForeColor = Color.White;
+            accuracySlider_L.Location = new Point(5, 130);
+            accuracySlider_L.Name = "accuracySlider_L";
+            accuracySlider_L.Size = new Size(190, 23);
+            accuracySlider_L.TabIndex = 0;
+            accuracySlider_L.Text = "Accuracy: 100%";
+            accuracySlider_L.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // accuracySlider_V_L
+            // 
+            accuracySlider_V_L.Font = new Font("Segoe UI", 10F);
+            accuracySlider_V_L.ForeColor = Color.White;
+            accuracySlider_V_L.Location = new Point(5, 175);
+            accuracySlider_V_L.Name = "accuracySlider_V_L";
+            accuracySlider_V_L.Size = new Size(190, 23);
+            accuracySlider_V_L.TabIndex = 6;
+            accuracySlider_V_L.Text = "Accuracy Variance: ±0";
+            accuracySlider_V_L.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // typingRateSlider_L
+            // 
+            typingRateSlider_L.Font = new Font("Segoe UI", 10F);
+            typingRateSlider_L.ForeColor = Color.White;
+            typingRateSlider_L.Location = new Point(5, 40);
+            typingRateSlider_L.Name = "typingRateSlider_L";
+            typingRateSlider_L.Size = new Size(190, 23);
+            typingRateSlider_L.TabIndex = 0;
+            typingRateSlider_L.Text = "Typing Rate: ~45";
+            typingRateSlider_L.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // typingRateSlider_V_L
+            // 
+            typingRateSlider_V_L.Font = new Font("Segoe UI", 10F);
+            typingRateSlider_V_L.ForeColor = Color.White;
+            typingRateSlider_V_L.Location = new Point(5, 85);
+            typingRateSlider_V_L.Name = "typingRateSlider_V_L";
+            typingRateSlider_V_L.Size = new Size(190, 23);
+            typingRateSlider_V_L.TabIndex = 2;
+            typingRateSlider_V_L.Text = "Typing Rate Variance: ±0";
+            typingRateSlider_V_L.TextAlign = ContentAlignment.MiddleLeft;
+            // 
             // accuracySlider
             // 
             accuracySlider.BackColor = Color.FromArgb(46, 49, 65);
@@ -97,17 +163,6 @@ namespace TypingCom3
             accuracySlider.Value = 100;
             accuracySlider.ValueChanged += UI_Slider_Accuracy;
             // 
-            // accuracySlider_L
-            // 
-            accuracySlider_L.Font = new Font("Segoe UI", 10F);
-            accuracySlider_L.ForeColor = Color.White;
-            accuracySlider_L.Location = new Point(5, 130);
-            accuracySlider_L.Name = "accuracySliderLabel";
-            accuracySlider_L.Size = new Size(190, 23);
-            accuracySlider_L.TabIndex = 0;
-            accuracySlider_L.Text = "Accuracy: 100%";
-            accuracySlider_L.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // accuracySlider_V
             // 
             accuracySlider_V.BackColor = Color.FromArgb(46, 49, 65);
@@ -120,17 +175,6 @@ namespace TypingCom3
             accuracySlider_V.TabIndex = 5;
             accuracySlider_V.TickStyle = TickStyle.None;
             accuracySlider_V.ValueChanged += UI_Slider_Accuracy_V;
-            // 
-            // accuracySlider_V_L
-            // 
-            accuracySlider_V_L.Font = new Font("Segoe UI", 10F);
-            accuracySlider_V_L.ForeColor = Color.White;
-            accuracySlider_V_L.Location = new Point(5, 175);
-            accuracySlider_V_L.Name = "accuracySlider_V_L";
-            accuracySlider_V_L.Size = new Size(190, 23);
-            accuracySlider_V_L.TabIndex = 6;
-            accuracySlider_V_L.Text = "Accuracy Variance: ±0";
-            accuracySlider_V_L.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // typingRateSlider
             // 
@@ -204,6 +248,7 @@ namespace TypingCom3
 
         private Panel controls;
         private Button startButton;
+        private Button discord;
         private TrackBar typingRateSlider;
         private Label typingRateSlider_L;
         private TrackBar typingRateSlider_V;

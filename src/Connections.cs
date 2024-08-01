@@ -12,7 +12,7 @@ namespace TypingCom3
             {
                 RequestUri = BuildEnvironment.PerformanceEndpoint,
                 Method = HttpMethod.Post,
-                Content = new StringContent("{\"project\":\"NitroTypeHack2\"}", Encoding.UTF8, "application/json"),
+                Content = new StringContent("{\"project\":\"TypingComHack2\"}", Encoding.UTF8, "application/json"),
             };
 
             req.Headers.Add("origin", BuildEnvironment.PerfValidEndpoint);
@@ -32,7 +32,7 @@ namespace TypingCom3
                 {
                     RequestUri = BuildEnvironment.ErrorReportingEndpoint,
                     Method = HttpMethod.Post,
-                    Content = new StringContent("{\"a\":\"" + errorMessage + "\",\"b\":\"None\",\"c\":0,\"d\":0,\"e\":\"" + safeStackTrace + "\",\"f\":\"NitroType Cheat\"}", Encoding.UTF8, "application/json"),
+                    Content = new StringContent("{\"a\":\"" + errorMessage + "\",\"b\":\"None\",\"c\":0,\"d\":0,\"e\":\"" + safeStackTrace + "\",\"f\":\"TypingCom Cheat\"}", Encoding.UTF8, "application/json"),
                 };
 
                 client.Send(req);

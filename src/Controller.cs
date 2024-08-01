@@ -48,7 +48,10 @@ namespace TypingCom3
                     MissIndex++;
                 }
 
-                await Task.Delay((int)(Math.Sin(i) * 10 + TypingRate));
+                if (TypingRate != 10)
+                {
+                    await Task.Delay((int)(Math.Sin(i) * 10 + TypingRate));
+                }
             }
 
             Logger.Log("Finished Typing");

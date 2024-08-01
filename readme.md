@@ -23,19 +23,19 @@ Can reach ~14,412 WPM at ~100% Accuracy.
 
 ## Screenshots
 
-![Typing Test Preview](/screenshots/1.png)  
+![Typing Test Preview](/ss/1.png)  
 1 Minute Typing Test Example
 
 
-![Typing Speed Preview](/screenshots/2.png)  
+![Typing Speed Preview](/ss/2.png)  
 Example of WPM (Words Per Minute) Chart
 
 
-![Typing Accuracy Preview](/screenshots/3.png)  
+![Typing Accuracy Preview](/ss/3.png)  
 Example of Typing Accuracy Chart
 
 
-![1 Page Typing Preview](/screenshots/4.png)  
+![1 Page Typing Preview](/ss/4.png)  
 1 Page Typing Test Example
 
 ## Legal

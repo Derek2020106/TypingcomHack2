@@ -1,10 +1,8 @@
 .vs
 Output
-Typingcom2/bin/*
-Typingcom2/obj/*
 packages/*
 *.iss
-/src/TypingCom3/bin
-/src/TypingCom3/obj
-src/TypingCom3/BuildEnvironment.cs
-src/TypingCom3/TypingCom3.csproj.user
+/src/bin
+/src/obj
+src/BuildEnvironment.cs
+src/TypingCom3.csproj.user
