@@ -82,7 +82,7 @@ namespace TypingCom3
                 if (WantsUpdate == DialogResult.Yes)
                 {
                     Logger.Log("Opening Update Link");
-                    System.Diagnostics.Process.Start("explorer.exe", "https://github.com/kgsensei/NitroTypeHack2/releases/latest");
+                    System.Diagnostics.Process.Start("explorer.exe", "https://github.com/kgsensei/TypingcomHack2/releases/latest");
                 }
             }
         }

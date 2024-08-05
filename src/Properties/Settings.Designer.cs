@@ -25,7 +25,7 @@ namespace TypingCom3.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("260")]
         public int UsrCnf_TypingRate_Real {
             get {
                 return ((int)(this["UsrCnf_TypingRate_Real"]));
@@ -37,7 +37,7 @@ namespace TypingCom3.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public int UsrCnf_TypingRate_Visual {
             get {
                 return ((int)(this["UsrCnf_TypingRate_Visual"]));
