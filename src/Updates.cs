@@ -2,7 +2,7 @@
 {
     class Updates
     {
-        public static string VersionCode = "2.0";
+        public static string VersionCode = "2.0.1";
 
         public static async Task<Boolean> ShouldUpdate()
         {
@@ -12,16 +12,36 @@
             {
                 RequestUri = BuildEnvironment.UpdateCheckerEndpoint,
                 Method = HttpMethod.Get,
+                Headers = {
+                    CacheControl = new System.Net.Http.Headers.CacheControlHeaderValue
+                    {
+                        NoCache = true
+                    }
+                }
             };
 
             req.Headers.UserAgent.Add(
                 new System.Net.Http.Headers.ProductInfoHeaderValue(
-                    "nth-version-checker",
+                    "tch-version-checker",
                     VersionCode
                 )
             );
 
-            var res = await client.SendAsync(req);
+            HttpResponseMessage res;
+            try
+            {
+                res = await client.SendAsync(req);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Unable to connect to update server. A new version might be available. Cannot verify version.",
+                    "Internal Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return false;
+            }
 
             res.EnsureSuccessStatusCode();
 

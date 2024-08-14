@@ -25,6 +25,8 @@ namespace TypingCom3
             InitializeComponent();
             LoadPreviousUser();
             SetupWebview();
+
+            Text = "Typing.com Cheat v" + Updates.VersionCode;
         }
 
         private void LoadPreviousUser()
@@ -34,17 +36,24 @@ namespace TypingCom3
 
             if (Opens != 0)
             {
-                Config.TypingRate = UserConfig.Get("UsrCnf_TypingRate_Real");
-                typingRateSlider.Value = UserConfig.Get("UsrCnf_TypingRate_Visual");
+                try
+                {
+                    Config.TypingRate = UserConfig.Get("UsrCnf_TypingRate_Real");
+                    typingRateSlider.Value = UserConfig.Get("UsrCnf_TypingRate_Visual");
 
-                Config.TypingRateVariancy = UserConfig.Get("UsrCnf_TypingRateV");
-                typingRateSlider_V.Value = Config.TypingRateVariancy;
+                    Config.TypingRateVariancy = UserConfig.Get("UsrCnf_TypingRateV");
+                    typingRateSlider_V.Value = Config.TypingRateVariancy;
 
-                Config.Accuracy = UserConfig.Get("UsrCnf_Accuracy");
-                accuracySlider.Value = Config.Accuracy;
+                    Config.Accuracy = UserConfig.Get("UsrCnf_Accuracy");
+                    accuracySlider.Value = Config.Accuracy;
 
-                Config.AccuracyVariancy = UserConfig.Get("UsrCnf_AccuracyV");
-                accuracySlider_V.Value = Config.AccuracyVariancy;
+                    Config.AccuracyVariancy = UserConfig.Get("UsrCnf_AccuracyV");
+                    accuracySlider_V.Value = Config.AccuracyVariancy;
+                }
+                catch (Exception)
+                {
+                    UserConfig.Reset();
+                }
             }
 
             Opens++;
