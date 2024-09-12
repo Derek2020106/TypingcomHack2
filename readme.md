@@ -40,6 +40,7 @@ Example of Typing Accuracy Chart
 
 ## Legal
 
-This project & all associated code are copyright &copy; of kgsensei 2023 
-Do not steal others code, it is illegal and copyright violation.  
-I (kgsensei) am not responsible for any way that you or anyone else uses this tool.
+The TypingcomHack2, TypingcomCheat2, TCH5, and all other aliases of this project are owned and copyright &copy; of kgsensei. Copyright theft is a federal crime and may be reported to international authorities. I, kgsensei, am not responsible for any way that you or anyone else uses this tool. Damages to yourself and/or services are solely your, the users, responsibility. I, kgsensei, do not condone cheating and this tool exists exclusively as documentation/a proof of concept for a generic typing game cheat. The user, you, is responsible for all consequences of using this tool, including, but not limited to, in-game punishments, school suspensions/expulsions, and/or legal action. This legal notice will not protect derivative work creators. Derivative works include forks and clones.
+
+I, kgsensei, do not offer protection from tracking and/or provide a privacy policy for 3rd party tools. Use them at your own risk. Additionally, the tool itself as well as third parties may create log files on your computer for debugging/diagnostic reasons.
+
