@@ -10,7 +10,7 @@ This project has been discontinued. I will continue to merge pull requests howev
 
 ## Features/Advantages
 
-- Source Avaliable
+- Source Available
 - Easy Download & Setup
 - Customizable Speed Slider
 - Runs Like A Desktop App
