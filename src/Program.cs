@@ -21,8 +21,21 @@ namespace TypingCom3
             ShouldUpdate();
 
             Logger.Log("Initializing Window");
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            try
+            {
+                ApplicationConfiguration.Initialize();
+                Application.Run(new Form1());
+            }
+            catch (System.EntryPointNotFoundException)
+            {
+                MessageBox.Show(
+                    "This program is not supported on your device. (GetThreadDpiHostingBehavior not in DLL USER32.dll)",
+                    "Fatal Error",
+                    MessageBoxButtons.Ok,
+                    MessageBoxIcon.Information
+                );
+                return 0;
+            }
         }
 
         private static void LogApplicationProcessExit(object? sender, EventArgs e)
@@ -82,7 +95,7 @@ namespace TypingCom3
                 if (WantsUpdate == DialogResult.Yes)
                 {
                     Logger.Log("Opening Update Link");
-                    System.Diagnostics.Process.Start("explorer.exe", "https://github.com/kgsensei/TypingcomHack2/releases/latest");
+                    Connections.OpenLink("https://github.com/kgsensei/TypingcomHack2/releases/latest");
                 }
             }
         }

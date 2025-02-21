@@ -12,7 +12,8 @@
             {
                 RequestUri = BuildEnvironment.UpdateCheckerEndpoint,
                 Method = HttpMethod.Get,
-                Headers = {
+                Headers =
+                {
                     CacheControl = new System.Net.Http.Headers.CacheControlHeaderValue
                     {
                         NoCache = true
@@ -31,6 +32,7 @@
             try
             {
                 res = await client.SendAsync(req);
+                res.EnsureSuccessStatusCode();
             }
             catch (Exception)
             {
@@ -42,8 +44,6 @@
                 );
                 return false;
             }
-
-            res.EnsureSuccessStatusCode();
 
             string LiveVersionCode = await res.Content.ReadAsStringAsync();
             LiveVersionCode = LiveVersionCode

@@ -46,5 +46,22 @@ namespace TypingCom3
                 catch (Exception) { }
             }
         }
+
+        public static void OpenLink(string url)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("explorer.exe", url);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Error: Couldn't open link, lacking permissions.\n\n" + url,
+                    "Internal Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
     }
 }
