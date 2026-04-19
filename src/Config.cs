@@ -3,7 +3,7 @@
     class Config
     {
         // Base Ints
-        public static int TypingRate { get; set; } = 100;
+        public static int TypingRate { get; set; } = 99999999999999999999999999999999999999999999999999999;
         public static int Accuracy { get; set; } = 100;
 
         // Modifier Ints
